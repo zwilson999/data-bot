@@ -205,7 +205,6 @@ def write_to_sql(df: pd.DataFrame, usr: str, pwd: str, server: str="DataFiles", 
         "inserted_date": sqlalchemy.TIMESTAMP
     }
     print("Writing Data to SQL...")
-    print(df.head())
     df.to_sql(name=tbl, con=conn, if_exists='append', index=False, schema='public', chunksize=10000, dtype=dtypes)
     
 
